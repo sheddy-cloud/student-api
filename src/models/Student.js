@@ -1,24 +1,24 @@
-// src/models/Student.js
+import { connection } from "../config/database.js";
 
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/database.js";
-
-const Student = sequelize.define("Student", {
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
-    studentname: { 
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    program: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }
-}, {
-    timestamps: false // Disable createdAt and updatedAt
-});
+// Define the Student model
+const Student = (connection) => {
+    return connection.define("Student", {
+        id: {
+            type: mysql.DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        Studentname: {
+            type: mysql.DataTypes.STRING,
+            allowNull: false,
+        },
+        Program: {
+            type: mysql.DataTypes.STRING,
+            allowNull: false,
+        }
+    }, {
+        timestamps: false, // Disable createdAt and updatedAt
+    });
+};
 
 export default Student;
