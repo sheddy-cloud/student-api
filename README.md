@@ -13,6 +13,7 @@ This is a simple API that provides:
 2. Install dependencies:
    ```sh
    npm install
+   npm install sequelize mysql2
    npm install express mysql2 dotenv cors
    ```
 3. Create a `.env` file with the following variables:
