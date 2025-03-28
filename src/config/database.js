@@ -1,15 +1,16 @@
-import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
+const mysql = require('mysql');
 
-dotenv.config();
-
-
-export const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    dialect: "mysql",
-    logging: false,
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
-// sequelize.sync({ force: true }) // This will drop and recreate tables
-// .then(() => console.log("Tables have been recreated"))
-// .catch(err => console.error("Error recreating tables", err));
 
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the MySQL database');
+});
