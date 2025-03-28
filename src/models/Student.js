@@ -9,7 +9,7 @@ const Student = sequelize.define("Student", {
         autoIncrement: true,
         primaryKey: true,
     },
-    studentname: { // Make sure the column name matches your database
+    studentname: { 
         type: DataTypes.STRING,
         allowNull: false,
     },
