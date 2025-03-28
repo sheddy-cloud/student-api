@@ -1,5 +1,5 @@
 # student-api// README.md
-/*
+
 # Student API
 This is a simple API that provides:
 - A list of students enrolled in Software Engineering.
@@ -13,7 +13,7 @@ This is a simple API that provides:
 2. Install dependencies:
    ```sh
    npm install
-    npm install express mysql2 dotenv cors
+   npm install express mysql2 dotenv cors
    ```
 3. Create a `.env` file with the following variables:
    ```sh
@@ -30,4 +30,4 @@ This is a simple API that provides:
 ## API Endpoints
 - `GET /students`: Returns a list of students from the database.
 - `GET /subjects`: Returns subjects categorized by academic year.
-*/
+
