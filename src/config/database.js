@@ -1,20 +1,15 @@
-import mysql from 'mysql2';
+import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-// Create a connection to the database
-const connection = mysql.createConnection({
-    host: process.env.DB_HOST, // RDS endpoint
-    user: process.env.DB_USER, // DB user (e.g., admin)
-    password: process.env.DB_PASSWORD, // DB password
-    database: process.env.DB_NAME, // Database name
+// Load environment variables from the .env file
+dotenv.config();
+
+// Create a new Sequelize instance to connect to the database
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    dialect: "mysql",
+    logging: false,
 });
 
-// Connect to the database
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-    } else {
-        console.log('Connected to the database');
-    }
-});
-
-export { connection };
+// Export sequelize for use in other modules
+export { sequelize };
