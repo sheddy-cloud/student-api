@@ -1,24 +1,25 @@
-import { connection } from "../config/database.js";
+import { DataTypes } from "sequelize";
+import { sequelize } from "../config/database.js";
 
-// Define the Subject model
-const Subject = (connection) => {
-    return connection.define("Subject", {
-        id: {
-            type: mysql.DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
-        },
-        subjectname: {
-            type: mysql.DataTypes.STRING,
-            allowNull: false,
-        },
-        year: {
-            type: mysql.DataTypes.INTEGER,
-            allowNull: false,
-        }
-    }, {
-        timestamps: false, // Disable createdAt and updatedAt
-    });
-};
+const Subject = sequelize.define("Subject", {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    },
+    subjectname: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    year: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    }
+    
+},
+{
+    timestamps: false // Disable createdAt and updatedAt
+});
+
 
 export default Subject;

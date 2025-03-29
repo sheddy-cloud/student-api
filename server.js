@@ -1,6 +1,16 @@
-import { sequelize } from './src/config/database.js';
+import app from "./src/app.js";
+import dotenv from "dotenv";
+import { sequelize } from "./src/config/database.js";
 
-// You can check if the connection to the database works
-sequelize.authenticate()
-  .then(() => console.log('Database connection established successfully.'))
-  .catch(err => console.error('Unable to connect to the database:', err));
+dotenv.config();
+
+const PORT = process.env.PORT;
+
+sequelize.sync().then(() => {
+    console.log("Database connected successfully");
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}).catch(err => {
+    console.error("Database connection failed: ", err);
+});
