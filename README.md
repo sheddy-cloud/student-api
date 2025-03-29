@@ -8,7 +8,9 @@ This is a simple API that provides:
 ## Setup
 1. Clone the repository:
    ```sh
-   git clone <repo_url>
+   git clone https://github.com/yourusername/student-api.git
+   cd student-api
+
    ```
 2. Install dependencies:
    ```sh
@@ -18,17 +20,26 @@ This is a simple API that provides:
    ```
 3. Create a `.env` file with the following variables:
    ```sh
-   DB_NAME=student_db
-   DB_USER=root
+   DB_NAME=
+   DB_USER=
    DB_PASSWORD=
-   DB_HOST=localhost
+   DB_HOST=
    ```
 4. Run the server:
    ```sh
    npm start
+   
    ```
 
 ## API Endpoints
-- `GET /students`: Returns a list of students from the database.
-- `GET /subjects`: Returns subjects categorized by academic year.
+1. GET /students
 
+    Description: Returns a list of all students.
+
+    Full URL: http://51.21.191.240/students
+
+2. GET /subjects
+
+    Description: Returns a list of all subjects.
+
+    Full URL: http://51.21.191.240/subjects
