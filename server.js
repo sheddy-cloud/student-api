@@ -6,7 +6,7 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-sequelize.sync().then(() => {
+sequelize.authenticate().then(() => {
     console.log("Database connected successfully");
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
