@@ -8,7 +8,7 @@ This is a simple API that provides:
 ## Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/student-api.git
+   git clone https://github.com/sheddy-cloud/student-api
    cd student-api
 
    ```
