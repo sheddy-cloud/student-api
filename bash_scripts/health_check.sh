@@ -3,18 +3,18 @@
 LOG_FILE="/var/log/server_health.log"
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 
-# Check CPU Usage
+# CPU Usage status
 cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
-# Check Memory Usage
+# Memory Usage Status
 mem_usage=$(free | grep Mem | awk '{printf("%.2f"), $3/$2 * 100}')
-# Check Disk Usage
+# Disk Usage Status
 disk_usage=$(df / | grep / | awk '{print $5}' | sed 's/%//')
 
-# Check if web server is running (adjust for your service)
+# Check if web server is running
 service_name="nginx"
 service_status=$(systemctl is-active $service_name)
 
-# Check API endpoints
+# Checking API endpoints
 students_status=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3006/students)
 subjects_status=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3006/subjects)
 
