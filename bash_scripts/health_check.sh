@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="/var/log/server_health.log"
+LOG_FILE="/var/log/health.log"
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 
 # CPU Usage status
