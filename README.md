@@ -98,8 +98,7 @@ health_check.sh	Every 6 hours	0 */6 * * * /student-api/bash_scripts/health_check
 backup_api.sh	Daily at 2 AM	0 2 * * * /student-api/bash_scripts/backup_api.sh
 update_server.sh	Every 3 days at 3 AM	0 3 */3 * * /student-api/bash_scripts/update_server.sh
 
-    Replace /path/to/ with the actual absolute path to your scripts, e.g., /home/ubuntu/student-api/bash_scripts/
-
+   
 4️⃣ Sample Logs
 
 Checking the log files:
