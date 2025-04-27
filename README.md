@@ -5,13 +5,13 @@
 
     Description: Returns a list of all students.
 
-    Full URL: http://56.228.13.82/students
+    Full URL: http://13.60.224.231/students
 
 2. GET /subjects
 
     Description: Returns a list of all subjects.
 
-    Full URL:http://51.21.191.240/subjects
+    Full URL:http://13.60.224.231/subjects
 
  # AWS Ubuntu Server Management – Bash Scripts
 
@@ -115,6 +115,41 @@ sudo cat /var/log/update.log
     Tested with Ubuntu 22.04.
 
     Use environment-safe practices for credentials in production.
+
+
+🐳 Dockerized Deployment
+🚀 Steps to Build and Run
+1. Clone the Repository
+
+git clone https://github.com/sheddy-cloud/student-api.git
+cd student-api
+
+2. Build Docker Image
+
+sudo docker build -t student-api .
+
+3. Run Using Docker Compose
+
+sudo docker compose up -d
+
+    This will start both:
+
+        API Container (Node.js app)
+
+        Database Container (MySQL)
+
+⚙️ Environment Variables
+
+These are set inside docker-compose.yml:
+Key	Value
+DB_HOST
+DB_USER
+DB_PASSWORD
+DB_NAME
+DB_PORT
+
+
+
 
 👨‍💻 Author
 
