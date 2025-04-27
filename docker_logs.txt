@@ -1,0 +1,6 @@
+Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Students' AND TABLE_SCHEMA = 'student'
+Executing (default): SHOW INDEX FROM `Students`
+Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Subjects' AND TABLE_SCHEMA = 'student'
+Executing (default): SHOW INDEX FROM `Subjects`
+Database connected successfully
+Server is running on port 3006

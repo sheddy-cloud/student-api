@@ -1,0 +1,35 @@
+services:
+  api:
+    build: .
+    container_name: student-api
+    ports:
+      - "3006:3006"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: SHEDRACKs.677
+      DB_NAME: student
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.0
+    container_name: student-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: SHEDRACKs.677
+      MYSQL_DATABASE: student
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
