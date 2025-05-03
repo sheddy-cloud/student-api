@@ -3,7 +3,7 @@ services:
     build: .
     container_name: student-api
     ports:
-      - "3006:3006"
+      - "3007:3006"
     depends_on:
       - db
     environment:
@@ -24,7 +24,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - app-network
 
