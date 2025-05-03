@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   backend:
-    build: ../../../
+    build:
+      context: ../../
+      dockerfile: Dockerfile
     container_name: backend
     ports:
       - "3006:3006"
@@ -21,19 +23,25 @@ services:
       - studentnet
 
   frontend1:
-    build: ../
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: frontend1
     networks:
       - studentnet
 
   frontend2:
-    build: ../
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: frontend2
     networks:
       - studentnet
 
   frontend3:
-    build: ../
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: frontend3
     networks:
       - studentnet
