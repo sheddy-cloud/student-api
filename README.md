@@ -5,13 +5,13 @@
 
     Description: Returns a list of all students.
 
-    Full URL: http://13.60.224.231/students
+    Full URL: http://56.228.7.70/students
 
 2. GET /subjects
 
     Description: Returns a list of all subjects.
 
-    Full URL:http://13.60.224.231/subjects
+    Full URL:http://56.228.7.70/subjects
 
  # AWS Ubuntu Server Management – Bash Scripts
 
