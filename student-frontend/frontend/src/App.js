@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Students from './components/Students';
-import Courses from './components/Courses';
+import Students from './components/student';
+import Courses from './components/courses';
 
 function App() {
   const [view, setView] = useState(null);
