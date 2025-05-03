@@ -14,26 +14,26 @@ services:
     container_name: mysql
     environment:
       MYSQL_DATABASE: student
-      MYSQL_ROOT_PASSWORD: yourpassword
+      MYSQL_ROOT_PASSWORD: SHEDRACKs.677
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
       - studentnet
 
   frontend1:
-    build: ./student-api/student-frontend
+    build: ./student-frontend
     container_name: frontend1
     networks:
       - studentnet
 
   frontend2:
-    build: ./student-api/student-frontend
+    build: ./student-frontend
     container_name: frontend2
     networks:
       - studentnet
 
   frontend3:
-    build: ./student-api/student-frontend
+    build: ./student-frontend
     container_name: frontend3
     networks:
       - studentnet
