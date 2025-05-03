@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./student-api
+    container_name: backend
+    ports:
+      - "3006:3006"
+    networks:
+      - studentnet
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: student
+      MYSQL_ROOT_PASSWORD: yourpassword
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - studentnet
+
+  frontend1:
+    build: ./student-api/student-frontend
+    container_name: frontend1
+    networks:
+      - studentnet
+
+  frontend2:
+    build: ./student-api/student-frontend
+    container_name: frontend2
+    networks:
+      - studentnet
+
+  frontend3:
+    build: ./student-api/student-frontend
+    container_name: frontend3
+    networks:
+      - studentnet
+
+  loadbalancer:
+    image: nginx:latest
+    container_name: loadbalancer
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend1
+      - frontend2
+      - frontend3
+    networks:
+      - studentnet
+
+networks:
+  studentnet:
+
+volumes:
+  mysql-data:
