@@ -5,6 +5,6 @@ export const getStudents = async (req, res) => {
         const students = await Student.findAll();
         res.json({ students });
     } catch (error) {
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({ error: "server crashed" });
     }
 };
