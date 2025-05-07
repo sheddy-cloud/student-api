@@ -1,20 +1,21 @@
-# Use Node.js official image
-FROM node:18
+# Step 1: Use an official Node.js runtime as a parent image
+FROM node:16-alpine
 
-# Create app directory
-WORKDIR /app
+# Step 2: Set the working directory inside the container
+WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
+# Step 3: Copy package.json and package-lock.json (to install dependencies)
 COPY package*.json ./
 
-# Install app dependencies
+# Step 4: Install any needed dependencies (based on package.json)
 RUN npm install
 
-# Bundle app source
+# Step 5: Copy the rest of your application code
 COPY . .
 
-# Expose the port your app runs on
+# Step 6: Expose the port your app will run on (this should match the one in your .env file)
 EXPOSE 3006
 
-# Command to run the app
+# Step 7: Command to run your app (make sure this matches how your app starts)
 CMD ["node", "server.js"]
+
